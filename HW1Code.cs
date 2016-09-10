@@ -65,6 +65,14 @@ public class HW1Code
 	}
 	return newNewArr;
     }
+
+    public static int Multiply(int[] list) {
+        int p = 1;
+        foreach( int i in list) {
+	    p = p*i;
+    	}
+	return p;
+    }
     
     public static void Main() {
        Console.WriteLine("Expected:7 Actual:" + AddTwo(3,4));

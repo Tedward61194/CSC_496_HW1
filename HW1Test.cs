@@ -45,5 +45,11 @@ public class HW1Test {
 	[Test]
 	public void OddArray_Test() {
 	       Assert.AreEqual(HW1Code.OddArray(new[] {1,2,3,4,5}), (new[] {1,3,5}));
+	       Assert.AreEqual(HW1Code.OddArray(new[] {2,4,6}), (new int[] {}));
+	}
+
+	[Test]
+	public void Multiply_Test() {
+	       Assert.AreEqual(HW1Code.Multiply(new[] {2,3,4}), 24);
 	}
 }
