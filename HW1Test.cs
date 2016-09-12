@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections.Generic;
 
 [TestFixture]
 public class HW1Test {
@@ -51,5 +52,36 @@ public class HW1Test {
 	[Test]
 	public void Multiply_Test() {
 	       Assert.AreEqual(HW1Code.Multiply(new[] {2,3,4}), 24);
+	}
+
+	[Test]
+	public void IsSorted_Test() {
+	       Assert.IsTrue(HW1Code.IsSorted(new[] {1,2,3,4,5}));
+	       Assert.IsFalse(HW1Code.IsSorted(new[] {5,4,3,2,1}));
+	}
+
+	[Test]
+	public void Lowest_Test() {
+	       Assert.AreEqual(HW1Code.Lowest(new[] {-3, 6, 2, 15}), -3);
+	}
+
+	[Test]
+	public void Dups_Test() {
+	       Assert.AreEqual(HW1Code.Dups(new[] {'a','b','c'}),0);
+	       Assert.AreEqual(HW1Code.Dups(new[] {'a','b','a','c'}),1);
+	       Assert.AreEqual(HW1Code.Dups(new[] {'a','1','1','b','a'}),2);	       
+	}
+
+	[Test]
+	public void LowestValue() {
+	       Dictionary<int,string> dic1  = new Dictionary<int,string>();
+	       dic1.Add(2,"Apple");
+	       dic1.Add(4,"Banana");
+	       Assert.AreEqual(HW1Code.LowestValue(dic1),"Apple");
+	       Dictionary<int,string> dic2 = new Dictionary<int,string>();
+	       dic2.Add(5,"Books");
+	       dic2.Add(0,"Games");
+	       dic2.Add(3,"Cards");
+	       Assert.AreEqual(HW1Code.LowestValue(dic2),"Games");
 	}
 }

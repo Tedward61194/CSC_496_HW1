@@ -1,5 +1,5 @@
-
 using System;
+using System.Collections.Generic;
 
 public class HW1Code
 {
@@ -68,10 +68,54 @@ public class HW1Code
 
     public static int Multiply(int[] list) {
         int p = 1;
-        foreach( int i in list) {
+        foreach(int i in list) {
 	    p = p*i;
     	}
 	return p;
+    }
+
+    public static bool IsSorted(int[] list) {
+        bool result = true;
+	int last = int.MinValue;
+	foreach(int i in list) {
+	    if(i < last) {
+	        result = false;
+	    }
+	    last = i;
+	}
+	return result;
+    }
+
+    public static int Lowest(int[] arr) {
+        int low = int.MaxValue;
+	foreach(int i in arr) {
+	    if(i < low){
+	        low = i;
+	    }
+	}
+	return low;
+    }
+
+    public static int Dups(char[] arr) {
+        int c = 0;
+	for(int i = 0; i < arr.Length; i++) {
+	    for(int j = i; j <arr.Length-1; j++) {
+	        if(arr[i] == arr[j+1]) {
+		    c++;
+		}
+	    }
+	}
+	return c;
+    }
+
+    public static String LowestValue(Dictionary<int,string> d) {
+        int low = int.MaxValue;
+	foreach(KeyValuePair<int,string> entry in d) {
+	    if(entry.Key < low) {
+	        low = entry.Key;
+	    }
+	}
+	return d[low];
     }
     
     public static void Main() {
@@ -98,5 +142,7 @@ public class HW1Code
        } else {
           Console.WriteLine("False");
        }
+       char[] a = {'a', 'b', 'c'};
+       Dups(a);
     }
 }
