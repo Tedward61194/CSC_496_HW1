@@ -73,7 +73,7 @@ public class HW1Test {
 	}
 
 	[Test]
-	public void LowestValue() {
+	public void LowestValue_Test() {
 	       Dictionary<int,string> dic1  = new Dictionary<int,string>();
 	       dic1.Add(2,"Apple");
 	       dic1.Add(4,"Banana");
@@ -83,5 +83,17 @@ public class HW1Test {
 	       dic2.Add(0,"Games");
 	       dic2.Add(3,"Cards");
 	       Assert.AreEqual(HW1Code.LowestValue(dic2),"Games");
+	}
+	
+	[Test]
+	public void PangramCheck_Test() {
+               Assert.IsTrue(HW1Code.PangramCheck("The quick brown fox jumps over the lazy dog"));
+	       Assert.IsFalse(HW1Code.PangramCheck("False"));
+	}
+
+	[Test]
+	public void LoShu_Test() {
+	       Assert.IsFalse(HW1Code.LoShu(new[] {new[]{5}, new[]{3,2,7}}));
+	       Assert.IsTrue(HW1Code.LoShu(new[] {new[]{2,9,4}, new[]{7,5,3}, new[]{6,1,8}}));
 	}
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class HW1Code
 {
@@ -116,6 +117,38 @@ public class HW1Code
 	    }
 	}
 	return d[low];
+    }
+
+    public static bool PangramCheck(String s) {
+        bool b = true;
+	char[] alphabet = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+	foreach(char e in alphabet) {
+	    if(!(s.ToLower().Contains(e))) {
+	        b = false;
+	    }
+	}
+	return b;
+    }
+
+    //True if 3 by 3, numbers 1 - 9 occur exactly once, and sum of row/col/diag add up to same number
+    public static bool LoShu(int[][] arr) {
+        if(arr.Length != 3) {
+	    return false;
+	}
+	if(arr[0].Length != 3) {
+	    return false;
+	}
+	int totalTarg = arr[0][0] + arr[1][0] +arr[2][0];
+
+        if(arr[0][2] + arr[1][2] + arr[2][2] != totalTarg
+	    || arr[0][0] + arr[0][1] + arr[0][2] != totalTarg
+	    || arr[1][0] + arr[1][1] + arr[1][2] != totalTarg
+	    || arr[2][0] + arr[2][1] + arr[2][2] != totalTarg
+	    || arr[0][0] + arr[1][1] + arr[1][1] != totalTarg
+	    || arr[0][2] + arr[1][1] + arr[2][0] != totalTarg) {
+	        return true;
+	    }
+	return true;
     }
     
     public static void Main() {
