@@ -161,6 +161,13 @@ public class HW1Code
 	final = final.ConvertAll(word => word.ToUpper());
 	return final;
     }
+
+   /* compiler is telling me that they expected return type is different from actual return type, but I cant figure out why
+    public static Dictionary<string,int> TopTen(Dictionary<int,string> d) {
+	Dictionary<string,int> sortedDic = (from entry in d orderby entry.Value descending select entry).Take(10);
+
+	return sortedDic;
+    }*/
     
     public static void Main() {
        Console.WriteLine("Expected:7 Actual:" + AddTwo(3,4));
