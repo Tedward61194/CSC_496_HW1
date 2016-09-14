@@ -150,6 +150,17 @@ public class HW1Code
 	    }
 	return true;
     }
+
+    public static List<string> FilterLongWords(List<string> s, int n) {
+        List<string> final = new List<string>();
+	foreach(string word in s) {
+	    if(word.Length > n) {
+	        final.Add(word);
+	    }
+	}
+	final = final.ConvertAll(word => word.ToUpper());
+	return final;
+    }
     
     public static void Main() {
        Console.WriteLine("Expected:7 Actual:" + AddTwo(3,4));

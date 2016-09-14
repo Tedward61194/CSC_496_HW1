@@ -96,4 +96,9 @@ public class HW1Test {
 	       Assert.IsFalse(HW1Code.LoShu(new[] {new[]{5}, new[]{3,2,7}}));
 	       Assert.IsTrue(HW1Code.LoShu(new[] {new[]{2,9,4}, new[]{7,5,3}, new[]{6,1,8}}));
 	}
+	
+	[Test]
+	public void FilterLongWords_Test() {
+	       Assert.AreEqual(HW1Code.FilterLongWords(new List<string> {"longword","cat", "bat", "tedward"},3), (new List<string> {"LONGWORD","TEDWARD"}));
+	}
 }
